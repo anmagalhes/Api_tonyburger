@@ -1,0 +1,10 @@
+/* CONFIGURAÇÃO SERVER PARA PODE RODA EM QUALQUER SISTEMA OPERACIONA */
+
+const { resolve } = require("path");
+
+module.exports = {
+  config: resolve(__dirname, "src", "config", "database.js"),
+  "models-path": resolve(__dirname, "src", "app", "models"),
+  //"seeders-path" resolve(__dirname, "src", "app", "database", "seeders"),
+  "migrations-path": resolve(__dirname, "src", "database", "migrations"),
+};

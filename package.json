@@ -1,0 +1,35 @@
+{
+  "name": "tony_burger_v2",
+  "version": "1.0.0",
+  "description": "01 - Criar o arquivo package",
+  "main": "src/server.js",
+  "type":"module",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "deburg": "nodemon --inspect"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^7.0.0-alpha.2",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "sequelize-cli": "^6.3.0",
+    "sucrase": "^3.20.3"
+  }
+}
