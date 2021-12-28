@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "01 - Criar o arquivo package",
   "main": "src/server.js",
-  "type":"module",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
@@ -16,6 +14,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
+    "esm": "^3.2.25",
     "express": "^4.17.2",
     "mongoose": "^6.1.4",
     "pg": "^8.7.1",

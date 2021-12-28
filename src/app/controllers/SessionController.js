@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-import User from "../models/User.js";
+import User from "../models/User";
 
 class SessionController {
   async store(request, response) {
@@ -9,13 +9,14 @@ class SessionController {
       password: Yup.string().required(),
     });
 
+
     /* VALIDADO OS DADOS PARA FAZER LOGIN NA APLICAÇÃO */
 
     if (!(await schema.isValid(request.body))) {
       return response.status(400).json({
         error: "Verificar a senha ou email está divergente do cadastro",
       });
-    }
+    };
 
     const { email, password } = request.body;
 
@@ -29,13 +30,15 @@ class SessionController {
       return response.status(400).json({
         error: "Verificar a senha ou email está divergente do cadastro",
       });
-    }
+    };
+
+    /* REALIZANDO CHECK DE SENHA  */
 
     if (!(await user.checkPassword(password))) {
       return response.status(401).json({
-        Error: "Verificar a senha ou email está divergente do cadastro",
+        error: "Verificar a senha ou email está divergente do cadastro",
       });
-    }
+    };
 
     return response.json({
       id: user.id,
