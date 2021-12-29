@@ -1,5 +1,8 @@
 import * as Yup from "yup";
 
+import jwt from "jsonwebtoken";
+import authConfig from "../../config/auth";
+
 import User from "../models/User";
 
 class SessionController {
@@ -9,14 +12,13 @@ class SessionController {
       password: Yup.string().required(),
     });
 
-
     /* VALIDADO OS DADOS PARA FAZER LOGIN NA APLICAÇÃO */
 
     if (!(await schema.isValid(request.body))) {
       return response.status(400).json({
         error: "Verificar a senha ou email está divergente do cadastro",
       });
-    };
+    }
 
     const { email, password } = request.body;
 
@@ -30,7 +32,7 @@ class SessionController {
       return response.status(400).json({
         error: "Verificar a senha ou email está divergente do cadastro",
       });
-    };
+    }
 
     /* REALIZANDO CHECK DE SENHA  */
 
@@ -38,13 +40,16 @@ class SessionController {
       return response.status(401).json({
         error: "Verificar a senha ou email está divergente do cadastro",
       });
-    };
+    }
 
     return response.json({
       id: user.id,
       email,
       name: user.name,
       admin: user.admin,
+      token: jwt.sign({ id: user.id }, authConfig.secret, {
+        expiresIn: authConfig.expiresIn,
+      }),
     });
   }
 }
