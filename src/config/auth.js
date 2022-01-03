@@ -5,6 +5,6 @@ export default {
     // NÚMERO GERADO CONFORME A PALAVRA CHAVE
     secret:"3383b192a9e534ea1070386de41ecc69",
  // TEMPO DE EXPIRAÇÃO DO TOKER
-    expiresIn: '5d' 
+    expiresIn: '10d' 
 
 }

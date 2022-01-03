@@ -8,7 +8,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 13,
     sourceType: "module",
-  },
+  },7
   rules: {
     camelcase: "off",
     "prettier/prettier": "error"},

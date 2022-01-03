@@ -51,7 +51,7 @@ class SessionController {
         expiresIn: authConfig.expiresIn,
       }),
     });
-  }
+  };
 }
 
 export default new SessionController();

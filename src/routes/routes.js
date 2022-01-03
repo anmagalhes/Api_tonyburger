@@ -6,7 +6,7 @@ import multerConfig from "../config/multer";
 import ProductController from "../app/controllers/ProductController";
 import SessionController from "../app/controllers/SessionController";
 import UserController from "../app/controllers/UserController";
-
+import CaterogyController from "../app/controllers/CategoryController";
 
 import authMiddleware from "../app/middlewares/auth";
 
@@ -31,5 +31,11 @@ routes.post("/products", upload.single("file"), ProductController.store);
 
 // LISTA TODOS OS PRODUTOS
 routes.get("/products", ProductController.index); 
+
+routes.post("/caterogy",CaterogyController.store); 
+routes.get("/caterogy", CaterogyController.index); 
+
+
+
 
 export default routes;
