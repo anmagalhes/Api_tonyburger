@@ -20,6 +20,7 @@ export default (request,response, next) => {
             }
 
             request.userId =decoded.id
+            request.username= decoded.name
 
             return next()
         })
